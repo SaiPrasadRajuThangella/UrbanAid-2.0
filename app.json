@@ -1,0 +1,92 @@
+{
+  "expo": {
+    "name": "UrbanAid",
+    "slug": "UrbanAid",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/icon.png",
+    "scheme": "myapp",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.saiprasadraju678.UrbanAid"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "package": "com.saiprasadraju678.UrbanAid"
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.399238489235-dsaa2pjeoatru154ov05psqsgc9137oh"
+        }
+      ],
+      "expo-router",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/images/splash-icon.png",
+          "imageWidth": 200,
+          "resizeMode": "contain",
+          "backgroundColor": "#ffffff"
+        }
+      ],
+      [
+        "expo-video",
+        {
+          "supportsBackgroundPlayback": true,
+          "supportsPictureInPicture": true
+        }
+      ],
+      [
+        "expo-font",
+        {
+          "fonts": [
+            "./assets/fonts/Rubik-Bold.ttf",
+            "./assets/fonts/Rubik-SemiBold.ttf",
+            "./assets/fonts/Rubik-ExtraBold.ttf",
+            "./assets/fonts/Rubik-Light.ttf",
+            "./assets/fonts/Rubik-Medium.ttf",
+            "./assets/fonts/Rubik-Regular.ttf",
+            "./assets/fonts/SpaceMono-Regular.ttf",
+            "./assets/fonts/SanFranciscoProText/SFProText-Bold.ttf",
+            "./assets/fonts/SanFranciscoProText/SFProText-BoldItalic.ttf",
+            "./assets/fonts/SanFranciscoProText/SFProText-Heavy.ttf",
+            "./assets/fonts/SanFranciscoProText/SFProText-HeavyItalic.ttf",
+            "./assets/fonts/SanFranciscoProText/SFProText-Light.ttf",
+            "./assets/fonts/SanFranciscoProText/SFProText-LightItalic.ttf",
+            "./assets/fonts/SanFranciscoProText/SFProText-Medium.ttf",
+            "./assets/fonts/SanFranciscoProText/SFProText-MediumItalic.ttf",
+            "./assets/fonts/SanFranciscoProText/SFProText-Regular.ttf",
+            "./assets/fonts/SanFranciscoProText/SFProText-RegularItalic.ttf",
+            "./assets/fonts/SanFranciscoProText/SFProText-Semibold.ttf",
+            "./assets/fonts/SanFranciscoProText/SFProText-SemiboldItalic.ttf"
+          ]
+        }
+      ],
+      "expo-video",
+      "expo-secure-store"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {
+        "origin": false
+      },
+      "eas": {
+        "projectId": "77ff62ec-4de4-48bf-a5d6-ca6a7a5c06dd"
+      }
+    }
+  }
+}
