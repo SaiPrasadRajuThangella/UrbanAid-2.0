@@ -8,7 +8,7 @@ import {
   StyleSheet,
   TextInput,
 } from "react-native";
-import { ArrowLeft, Plus, Minus } from "lucide-react-native";
+import { Ionicons } from '@expo/vector-icons';
 
 const options = {
   rooms: ["1", "2", "3", "4", "Custom"],
@@ -114,7 +114,7 @@ const HouseDetails = ({ navigation, route }) => {
       {/* Header */}
       <View className="flex-row items-center mb-2">
         <TouchableOpacity onPress={() => navigation.goBack()} className="pr-4">
-          <ArrowLeft size={24} color="black" />
+          <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>
       </View>
 
@@ -240,7 +240,7 @@ const HouseDetails = ({ navigation, route }) => {
                       onPress={() => handleRemovePet(index)}
                       className="bg-red-100 rounded-full p-1"
                     >
-                      <Minus size={14} color="#EF4444" />
+                      <Ionicons name="remove" size={14} color="#EF4444" />
                     </TouchableOpacity>
                   </View>
                 </View>
@@ -281,7 +281,7 @@ const HouseDetails = ({ navigation, route }) => {
                 onPress={handleDecrementPetCount}
                 className="border border-gray-300 rounded-l-md p-1 w-8 items-center"
               >
-                <Minus size={14} color="#666" />
+                <Ionicons name="remove" size={14} color="#666" />
               </TouchableOpacity>
               <View className="border-t border-b border-gray-300 p-1 px-3">
                 <Text>{petCount}</Text>
@@ -290,7 +290,7 @@ const HouseDetails = ({ navigation, route }) => {
                 onPress={handleIncrementPetCount}
                 className="border border-gray-300 rounded-r-md p-1 w-8 items-center"
               >
-                <Plus size={14} color="#666" />
+                <Ionicons name="add" size={14} color="#666" />
               </TouchableOpacity>
             </View>
             <TouchableOpacity

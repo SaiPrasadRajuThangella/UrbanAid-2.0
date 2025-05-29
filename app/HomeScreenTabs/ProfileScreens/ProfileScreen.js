@@ -1,17 +1,5 @@
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import { 
-  Settings, 
-  ChevronRight, 
-  Globe, 
-  MapPin, 
-  Tv, 
-  Trash2, 
-  Clock, 
-  LogOut, 
-  Heart, 
-  Download,
-  HelpCircle
-} from "lucide-react-native";
+import { Ionicons } from '@expo/vector-icons';
 import { useSelector } from "react-redux";
 
 const ProfileScreen = ({ navigation }) => {
@@ -41,45 +29,45 @@ const ProfileScreen = ({ navigation }) => {
       {/* Menu Options */}
       <View className="mt-6 px-4">
         <ProfileOption 
-          icon={Heart} 
+          iconName="heart" 
           title="Favourites" 
           onPress={() => navigation.navigate("FavoritesScreen")}
           badge={wishlistCount > 0 ? wishlistCount.toString() : null}
         />
-        <ProfileOption icon={Download} title="Downloads" />
-        <ProfileOption icon={Globe} title="Languages" />
+        <ProfileOption iconName="download" title="Downloads" />
+        <ProfileOption iconName="globe" title="Languages" />
         <ProfileOption 
           onPress={() => navigation.navigate("ChangeCommunity")} 
-          icon={MapPin} 
+          iconName="location" 
           title="Addresses" 
         />
-        <ProfileOption icon={Tv} title="Subscription" />
-        <ProfileOption icon={Tv} title="Display" />
+        <ProfileOption iconName="tv" title="Subscription" />
+        <ProfileOption iconName="phone-portrait" title="Display" />
         <ProfileOption 
           onPress={() => navigation.navigate("HelpAndSupport")} 
-          icon={HelpCircle} 
+          iconName="help-circle" 
           title="Help and Support" 
         />
       </View>
 
       {/* Other Options */}
       <View className="mt-6 px-4 border-t border-gray-200 pt-4">
-        <ProfileOption icon={Trash2} title="Clear Cache" />
-        <ProfileOption icon={Clock} title="Clear History" />
-        <ProfileOption icon={LogOut} title="Log Out" />
+        <ProfileOption iconName="trash" title="Clear Cache" />
+        <ProfileOption iconName="time" title="Clear History" />
+        <ProfileOption iconName="log-out" title="Log Out" />
       </View>
     </View>
   );
 };
 
 // ProfileOption component with onPress handling and optional badge
-const ProfileOption = ({ icon: Icon, title, onPress, badge }) => (
+const ProfileOption = ({ iconName, title, onPress, badge }) => (
   <TouchableOpacity 
     className="flex-row justify-between items-center py-3" 
     onPress={onPress}
   >
     <View className="flex-row items-center gap-4 mt-2 space-x-3">
-      <Icon size={20} color="black" />
+      <Ionicons name={iconName} size={20} color="black" />
       <Text className="text-gray-700 font-SF-regular">{title}</Text>
     </View>
     <View className="flex-row items-center">
@@ -88,7 +76,7 @@ const ProfileOption = ({ icon: Icon, title, onPress, badge }) => (
           <Text className="text-white text-xs font-SF-bold">{badge}</Text>
         </View>
       )}
-      <ChevronRight size={20} color="gray" />
+      <Ionicons name="chevron-forward" size={20} color="gray" />
     </View>
   </TouchableOpacity>
 );

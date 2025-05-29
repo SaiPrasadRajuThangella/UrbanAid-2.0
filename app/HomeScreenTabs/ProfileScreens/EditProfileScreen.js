@@ -7,14 +7,7 @@ import {
   Alert,
   Platform,
 } from "react-native";
-import {
-  ArrowLeft,
-  Pencil,
-  Lock,
-  ChevronDown,
-  ChevronRight,
-  Save,
-} from "lucide-react-native";
+import { Ionicons } from '@expo/vector-icons';
 import { useState, useEffect } from "react";
 import { ScrollView } from "react-native";
 import * as ImagePicker from 'expo-image-picker'; // Import ImagePicker from Expo
@@ -261,7 +254,7 @@ const EditProfileScreen = ({ navigation, route }) => {
           onPress={() => navigation.goBack()}
           className="absolute top-4 left-4"
         >
-          <ArrowLeft size={24} color="black" />
+          <Ionicons name="arrow-back" size={24} color="black" />
         </TouchableOpacity>
 
         {/* Profile Picture */}
@@ -274,7 +267,7 @@ const EditProfileScreen = ({ navigation, route }) => {
             className="absolute top-24 bg-blue-500 p-1 rounded-full"
             onPress={pickImage}
           >
-            <Pencil size={16} color="white" />
+            <Ionicons name="pencil" size={16} color="white" />
           </TouchableOpacity>
         </View>
 
@@ -333,7 +326,7 @@ const EditProfileScreen = ({ navigation, route }) => {
                 {userData.house_details && (
                   <View className="bg-green-500 rounded-full w-2 h-2 mr-2" />
                 )}
-                <ChevronRight size={18} color="#666" />
+                <Ionicons name="chevron-forward" size={18} color="#666" />
               </View>
             </TouchableOpacity>
           </View>
@@ -342,7 +335,7 @@ const EditProfileScreen = ({ navigation, route }) => {
             onPress={() => navigation.navigate("ForgotPasswordScreen")}
             className="bg-blue-500 flex-row items-center justify-center p-3 py-4 rounded-lg mt-4"
           >
-            <Lock size={16} color="white" />
+            <Ionicons name="lock-closed" size={16} color="white" />
             <Text className="text-white font-SF-medium ml-2">
               Change Password
             </Text>
@@ -353,7 +346,7 @@ const EditProfileScreen = ({ navigation, route }) => {
             onPress={handleSaveChanges}
             className="bg-green-500 mb-10 flex-row items-center justify-center p-3 py-4 rounded-lg mt-4"
           >
-            <Save size={16} color="white" />
+            <Ionicons name="save" size={16} color="white" />
             <Text className="text-white font-SF-medium ml-2">Save Changes</Text>
           </TouchableOpacity>
         </View>
